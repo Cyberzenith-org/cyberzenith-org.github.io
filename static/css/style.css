@@ -53,6 +53,21 @@ canvas{
   font-size: 500%;
 }
 
+/* ---- sidebar nav css ---- */
+.nav-content{
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+.nav-div{
+  margin-left: 88%;
+  padding-right: 4%;
+}
+
+.nav-active{
+  text-decoration: underline;
+}
+
 /* ---- stats.js ---- */
 
 .count-particles{
