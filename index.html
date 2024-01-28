@@ -9,7 +9,7 @@
         <link rel="icon" type="image/x-icon" href="static/favicon.ico">        
         <title>Cyberzenith | Home</title>
     </head>
-    <body>
+    <body id="home">
         <div class="fixed-top z-1" id="particles-js">
             <div class="container-fluid top-50 position-fixed z-2">
                 <div class="d-flex justify-content-center">
@@ -17,17 +17,38 @@
                 </div>
             </div>
         </div>
+        <nav class="fixed-top nav top-50 flex-column z-3 nav-div">
+            <a class="h2 nav-content nav-active" name="home" href="#home">Home</a>
+            <a class="h2 nav-content" name="projects" href="#projects">Projects</a>
+            <a class="h2 nav-content" name="aboutus" href="#aboutus">About Us</a>
+        </nav>
         <div class="position-relative">
             <div class="position-absolute top-100 w-100 z-2 bg-dark contentText">
-                <p class="container d-flex justify-content-center h3" style="padding: 5%; font-family: 'Montserrat'">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt labore laboriosam, alias nihil culpa nulla similique sit repudiandae ex necessitatibus, debitis natus et consequuntur adipisci delectus. Exercitationem, natus veniam. Aut.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt labore laboriosam, alias nihil culpa nulla similique sit repudiandae ex necessitatibus, debitis natus et consequuntur adipisci delectus. Exercitationem, natus veniam. Aut.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt labore laboriosam, alias nihil culpa nulla similique sit repudiandae ex necessitatibus, debitis natus et consequuntur adipisci delectus. Exercitationem, natus veniam. Aut.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt labore laboriosam, alias nihil culpa nulla similique sit repudiandae ex necessitatibus, debitis natus et consequuntur adipisci delectus. Exercitationem, natus veniam. Aut.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt labore laboriosam, alias nihil culpa nulla similique sit repudiandae ex necessitatibus, debitis natus et consequuntur adipisci delectus. Exercitationem, natus veniam. Aut.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt labore laboriosam, alias nihil culpa nulla similique sit repudiandae ex necessitatibus, debitis natus et consequuntur adipisci delectus. Exercitationem, natus veniam. Aut.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt labore laboriosam, alias nihil culpa nulla similique sit repudiandae ex necessitatibus, debitis natus et consequuntur adipisci delectus. Exercitationem, natus veniam. Aut.
-                </p>
+                <div class="container" style="padding: 5%; font-family: 'Montserrat'">
+                    <span class="h1" id="projects"><b>PROJECTS</b></span>
+
+                    <!-- Web Development section -->
+                    <div class="container-fluid row align-items-center" style="padding: 5%;">
+                        <img class="col" src="static/internet.svg" alt="Web Development" style="max-width: 20%;">
+                        <div class="container col">
+                            <span class="h3"><b>Web Development</b></span>
+                            <p class="h4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis sed officiis quibusdam ratione voluptates saepe, repellendus optio omnis illo ducimus deserunt itaque impedit beatae nemo perferendis consectetur mollitia blanditiis veritatis!
+                            </p>
+                        </div>
+                    </div> 
+
+                    <!-- Discord Development section -->
+                    <div class="container-fluid row align-items-center" style="padding: 5%;">
+                        <img class="col" src="static/discord.svg" alt="Web Development" style="max-width: 20%;">
+                        <div class="container col">
+                            <span class="h3"><b>Discord Development</b></span>
+                            <p class="h4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis sed officiis quibusdam ratione voluptates saepe, repellendus optio omnis illo ducimus deserunt itaque impedit beatae nemo perferendis consectetur mollitia blanditiis veritatis!
+                            </p>
+                        </div>
+                    </div> 
+                </div>
             </div>
         </div>
         <!-- scripts -->
@@ -40,9 +61,17 @@
         <!-- Setup and start animation! -->
         <script>
           var typed = new Typed('#element', {
-            strings: ['an Italian start-up', '<b>CYBERZENITH</b>'],
+            strings: ['an Italian development team', '<b>CYBERZENITH</b>'],
             typeSpeed: 50,
           });
+        </script>
+        <script>
+            window.addEventListener("hashchange", function(){
+                var nav = window.location.hash.substring(1);
+                console.log(nav);
+                document.getElementsByClassName("nav-active")[0].classList.remove("nav-active");
+                document.getElementsByName(nav)[0].classList.add("nav-active");
+            })
         </script>
     </body>   
 </html>
